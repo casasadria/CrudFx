@@ -99,7 +99,37 @@ public class DataBasePostGreSQLDAO implements DataBasePDAO {
 		return update;
 	}
 
-	public boolean validateLogin(String username, String password) {
+	@Override
+	public pupilModel selectAlumne(String text) {
+		pupilModel pupilModel = null;
+
+		try {
+			String sql = "SELECT * FROM alumnes WHERE id = " + text;
+			Statement st = conn.createStatement();
+			ResultSet rs = st.executeQuery(sql);
+
+			String id, nom, cognoms, curs_actual, progenitor1, progenitor2, progenitors;
+			String data_naixement;
+
+			while (rs.next()) {
+				id = rs.getString("id");
+				nom = rs.getString("nom");
+				cognoms = rs.getString("cognoms");
+				data_naixement = rs.getString("data_naixement");
+				curs_actual = rs.getString("curs_actual");
+				progenitor1 = rs.getString("progenitors").split(",")[0];
+				progenitor2 = rs.getString("progenitors").split(",")[1];
+				progenitors = progenitor1 + "," + progenitor2;
+				pupilModel = new pupilModel(id, nom, cognoms, data_naixement, curs_actual, progenitors);
+			}
+
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		}
+		return pupilModel;
+	}
+
+		public boolean validateLogin(String username, String password) {
 		boolean login = false;
 		try {
 			System.out.println(username);

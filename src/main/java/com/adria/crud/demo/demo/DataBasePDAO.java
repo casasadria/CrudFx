@@ -14,4 +14,6 @@ public interface DataBasePDAO {
 
     public boolean deletePupil(String text);
     public boolean updatePupil(pupilModel pupilModel);
+
+    public pupilModel selectAlumne(String text);
 }

@@ -11,28 +11,19 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.time.Instant;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.ResourceBundle;
 
 public class pupilController implements Initializable {
     private Stage stage;
     private static final DataBasePDAO bd = new DataBasePostGreSQLDAO();
     @FXML
-    private Button addButton;
+    private Button searchButton;
     @FXML
-    private Button delinfoButton;
-
+    private Button addButton;
     @FXML
     private Button alumneButton;
     @FXML
@@ -59,6 +50,8 @@ public class pupilController implements Initializable {
     String[] curs = { "ESO" , "Cicles Formatius" , "Batxillerat"};
     @FXML
     private Button deleteButton;
+    @FXML
+    private Button logoutButton;
 
     @FXML
     private DatePicker dnaixDatePicker;
@@ -84,14 +77,41 @@ public class pupilController implements Initializable {
     @FXML
     private Button updateButton;
 
+    public void logoutButtonOnAction(ActionEvent event) throws IOException {
+        Parent tableViewParent = FXMLLoader.load(getClass().getResource("login.fxml"));
+        Scene tableViewScene = new Scene(tableViewParent);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(tableViewScene);
+        window.show();
+    }
+
+    public void searchButtonOnAction(ActionEvent event){
+        if(idTextField.getText().isEmpty()){
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("Introdueix un ID");
+            alert.showAndWait();
+        }else{
+            pupilModel alumne = bd.selectAlumne(idTextField.getText());
+            nomTextField.setText(alumne.getNom());
+            cognomsTextField.setText(alumne.getCognoms());
+            dnaixDatePicker.setValue(LocalDate.parse(alumne.getData_naixement(), DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+            cursChoiceBox.setValue(alumne.getCurs_actual());
+            String prog1 = alumne.getProgenitors().split(",")[0];
+            String prog2 = alumne.getProgenitors().split(",")[1];
+            prog1TextField.setText(prog1.replaceAll("\"|,","").replace("{",""));
+            prog2TextField.setText(prog2.replaceAll("\"|}",""));
+        }
+    }
+
     public void updateButtonOnAction(ActionEvent event) {
         boolean insert = false;
         if (idTextField.getText().isEmpty()||nomTextField.getText().isEmpty() || cognomsTextField.getText().isEmpty() || cursChoiceBox.getValue().isEmpty() || prog1TextField.getText().isEmpty() || prog2TextField.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setHeaderText(null);
-            alert.setContentText("Please fill all the fields");
+            alert.setContentText("Introdueix tots els camps o busca un alumne per ID");
             alert.showAndWait();
-            return;
         } else {
             String progenitors = "'{\"" + prog1TextField.getText() + "\",\"" + prog2TextField.getText() + "\"}'";
             String data_naixement = dnaixDatePicker.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
@@ -113,11 +133,17 @@ public class pupilController implements Initializable {
         if(delete){
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Informació");
-            alert.setHeaderText("Alumne afegit correctament");
+            alert.setHeaderText("Alumne eliminat correctament");
             alert.setContentText("Informació");
             alert.showAndWait();
             selectAlumnes();
             valorNull();
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText(null);
+            alert.setContentText("No s'ha pogut eliminar l'alumne");
+            alert.showAndWait();
         }
 
     }
