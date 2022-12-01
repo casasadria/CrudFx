@@ -45,17 +45,24 @@ per iniciar haurem d’introduir el username i el password.
 
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.001.jpeg)
 
+
 Si falten dades a introduïr, ens donarà un avis desde un label que
 
 el password o l’username són incorrectes.
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.002.jpeg)
 
 
 Si les dades que introduïm son incorrectes ens dirà que no s’ha fet el login.
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.003.jpeg)
 
 
 Si el username o el password són correctes, carrega la següent pàgina:
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.004.jpeg)
 
 
@@ -63,13 +70,19 @@ A partir d'aquí podrás escollir si vols fer CRUD de alumnes,professor o mòdul
 
 
 CRUD de Alumnes:
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.005.jpeg)
 
 
 CRUD de Professors:
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.006.jpeg)
 
 
 CRUD de Moduls:
+
+
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.007.jpeg)
 
