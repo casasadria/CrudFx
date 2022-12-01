@@ -34,7 +34,8 @@ Instruccions i funcionalitats CRUD\_Fx
 
 
 
-Al iniciar l’aplicació per defecte ens surt la primera pantalla és de login, per iniciar haurem d’introduir el username i el password.
+Al iniciar l’aplicació per defecte ens surt la primera pantalla és de login,
+per iniciar haurem d’introduir el username i el password.
 
 
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.001.jpeg)
