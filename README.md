@@ -29,9 +29,9 @@ Instruccions i funcionalitats CRUD\_Fx
 **Logout:** Crida mètode per carregar la pàgina de login.
 
 
-**Refresh:** Crida un mètode que fa clear de un listView busca tots 
+**Refresh:** Crida un mètode que fa clear de un listView busca tots els registres i els carrega a la table.  
 
-els registres i els carrega a la table.  
+
 Al iniciar l’aplicació per defecte ens surt la primera pantalla és de login,
 
 per iniciar haurem d’introduir el username i el password.
