@@ -2,7 +2,7 @@ Instruccions i funcionalitats CRUD\_Fx
 
 **Buttons:**
 
-**Professor:**Crida mètode per cambiar al CRUD de Professors. **Alumne:**Crida mètode per cambiar al CRUD de Alumnes. **Mòduls:**Crida mètode per cambiar al CRUD de Mòduls. **Clear:**Crida un mètode per poder borrar tots els elements dels
+**Professor:** Crida mètode per cambiar al CRUD de Professors. **Alumne:**Crida mètode per cambiar al CRUD de Alumnes. **Mòduls:**Crida mètode per cambiar al CRUD de Mòduls. **Clear:**Crida un mètode per poder borrar tots els elements dels
 
 TextFields, DatePicker i ChoiceBox.
 
