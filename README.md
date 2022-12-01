@@ -29,18 +29,25 @@ Instruccions i funcionalitats CRUD\_Fx
 **Logout:** Crida mètode per carregar la pàgina de login.
 
 
-**Refresh:** Crida un mètode que fa clear de un listView busca tots els registres i els carrega a la table.
+**Refresh:** Crida un mètode que fa clear de un listView busca tots 
+
+els registres i els carrega a la table.
+
+
 
 
 
 
 Al iniciar l’aplicació per defecte ens surt la primera pantalla és de login,
+
 per iniciar haurem d’introduir el username i el password.
 
 
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.001.jpeg)
 
-Si falten dades a introduïr, ens donarà un avis desde un label que el password o l’username són incorrectes.
+Si falten dades a introduïr, ens donarà un avis desde un label que
+
+el password o l’username són incorrectes.
 ![](Aspose.Words.d203419b-7e4c-4561-b060-498eeba11d35.002.jpeg)
 
 
