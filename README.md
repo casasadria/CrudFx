@@ -31,7 +31,7 @@ Instruccions i funcionalitats CRUD\_Fx
 
 **Refresh:** Crida un mètode que fa clear de un listView busca tots 
 
-els registres i els carrega a la table.
+els registres i els carrega a la table.  
 
 
 Al iniciar l’aplicació per defecte ens surt la primera pantalla és de login,
