@@ -21,13 +21,13 @@ INSERT INTO alumnes
 VALUES(24, 'Nil', 'Sala', '2003-11-04', 'Cicles Formatius'::"curs", '{"Rudi Boy","Antonia Galafat"}');
 INSERT INTO alumnes
 (id, nom, cognoms, data_naixement, curs_actual, progenitors)
-VALUES(25, 'Ã�ngrid', 'Garcia', '2003-06-17', 'Batxillerat'::"curs", '{"Susana Torrent","Pare"}');
+VALUES(25, 'Íngrid', 'Garcia', '2003-06-17', 'Batxillerat'::"curs", '{"Susana Torrent","Pare"}');
 INSERT INTO alumnes
 (id, nom, cognoms, data_naixement, curs_actual, progenitors)
 VALUES(26, 'Josep', 'Torres', '2003-11-19', 'Cicles Formatius'::"curs", '{"Carme Aguilera","Josep Torres"}');
 INSERT INTO alumnes
 (id, nom, cognoms, data_naixement, curs_actual, progenitors)
-VALUES(1, 'AdriÃ ', 'Casas', '2003-10-02', 'Cicles Formatius'::"curs", '{"Marc Casas","Carmeta Llorens"}');
+VALUES(1, 'Adrià ', 'Casas', '2003-10-02', 'Cicles Formatius'::"curs", '{"Marc Casas","Carmeta Llorens"}');
 
 CREATE TABLE useraccounts (
 	iduseraccounts serial4 NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE useraccounts (
 
 INSERT INTO useraccounts
 (iduseraccounts, firstname, lastname, username, "password")
-VALUES(1, 'AdriÃ ', 'Casas', 'casasadria', 'adri');
+VALUES(1, 'Adrià ', 'Casas', 'casasadria', 'adri');
 INSERT INTO useraccounts
 (iduseraccounts, firstname, lastname, username, "password")
 VALUES(2, 'Eric', 'Morales', 'gitanoteton', 'pokemonballs123');
