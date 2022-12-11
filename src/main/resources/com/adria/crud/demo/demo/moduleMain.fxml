@@ -46,9 +46,10 @@
             <Button fx:id="logoutButton" layoutX="14.0" layoutY="301.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" style="-fx-background-color: #ffcc73;" text="Logout" />
             <TableView fx:id="table" layoutX="191.0" layoutY="31.0" prefHeight="227.0" prefWidth="393.0">
               <columns>
-                <TableColumn fx:id="idColumn" prefWidth="90.39996337890625" text="id" />
-                <TableColumn fx:id="nameColumn" prefWidth="140.0" text="nom" />
-                  <TableColumn fx:id="idPColumn" prefWidth="132.0" text="id_professor" />
+                <TableColumn fx:id="idColumn" prefWidth="52.0" text="id" />
+                <TableColumn fx:id="nameColumn" prefWidth="152.0" text="nom" />
+                  <TableColumn fx:id="idPColumn" prefWidth="74.39996337890625" text="id_professor" />
+                  <TableColumn fx:id="teacherColumn" prefWidth="116.0" text="professor" />
               </columns>
             </TableView>
             <Button fx:id="refreshButton" layoutX="530.0" layoutY="265.0" mnemonicParsing="false" onAction="#select" style="-fx-background-color: green;" text="Refresh" textFill="WHITE">

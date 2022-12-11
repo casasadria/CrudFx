@@ -37,6 +37,8 @@ public class moduleController implements Initializable{
 
         @FXML
         private TableColumn<moduleModel, String> idPColumn;
+        @FXML
+        private TableColumn<moduleModel, String> teacherColumn;
 
         @FXML
         private TextField idPTextField;
@@ -105,6 +107,7 @@ public class moduleController implements Initializable{
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
         idPColumn.setCellValueFactory(new PropertyValueFactory<>("id_professor"));
+        teacherColumn.setCellValueFactory(new PropertyValueFactory<>("professor"));
         table.setItems(bd.selectModules(listView));
         table.setItems(listView);
         table.getSortOrder().add(idColumn);

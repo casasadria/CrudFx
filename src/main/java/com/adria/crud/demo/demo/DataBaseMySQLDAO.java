@@ -101,18 +101,19 @@ try {
 
 	@Override
 	public ObservableList<moduleModel> selectModules(ObservableList<moduleModel> listView) {
-		String sql = "SELECT * FROM moduls";
+		String sql = "SELECT m.id, m.nom, m.id_professor, concat(p.nom,\" \",p.cognoms) as professor  FROM moduls m inner join professors p on id_professor = p.id;";
 		try {
 			Statement st = conn.createStatement();
 			ResultSet rs = st.executeQuery(sql);
 
-			String id,nom, id_professor;
+			String id,nom, id_professor,professor;
 
 			while (rs.next()) {
 				id = rs.getString("id");
 				nom = rs.getString("nom");
 				id_professor = rs.getString("id_professor");
-				listView.add(new moduleModel(id,nom,id_professor));
+				professor = rs.getString("professor");
+				listView.add(new moduleModel(id,nom,id_professor,professor));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

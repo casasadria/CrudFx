@@ -1,7 +1,22 @@
 package com.adria.crud.demo.demo;
 
 public class moduleModel {
-    String id, nom, id_professor;
+    String id, nom, id_professor,professor;
+    public moduleModel(String id, String nom, String id_professor, String professor) {
+        this.id = id;
+        this.nom = nom;
+        this.id_professor = id_professor;
+        this.professor = professor;
+    }
+
+    public String getProfessor() {
+        return professor;
+    }
+
+    public void setProfessor(String professor) {
+        this.professor = professor;
+    }
+
     public moduleModel(String id, String nom, String id_professor) {
         this.id = id;
         this.nom = nom;
